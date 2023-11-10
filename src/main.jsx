@@ -8,10 +8,10 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
-      <ThemeProvider>
-         <ParallaxProvider>
+      <ParallaxProvider>
+         <ThemeProvider>
             <RouterProvider router={router} />
-         </ParallaxProvider>
-      </ThemeProvider>
+         </ThemeProvider>
+      </ParallaxProvider>
    </React.StrictMode>
 );
