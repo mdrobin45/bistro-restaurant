@@ -1,7 +1,9 @@
 import About from "../../Containers/Home/About/About";
 import Banner from "../../Containers/Home/Banner/Banner";
+import CallToAction from "../../Containers/Home/CallToAction/CallToAction";
 import OnlineOrder from "../../Containers/Home/OnlineOrder/OnlineOrder";
 import OurMenu from "../../Containers/Home/OurMenu/OurMenu";
+import RecommendFoods from "../../Containers/Home/RecommendFoods/RecommendFoods";
 
 const Home = () => {
    return (
@@ -17,6 +19,12 @@ const Home = () => {
          </section>
          <section className="max-w-[1200px] mx-auto">
             <OurMenu />
+         </section>
+         <section className="max-w-[1200px] mx-auto">
+            <CallToAction />
+         </section>
+         <section className="max-w-[1200px] mx-auto">
+            <RecommendFoods />
          </section>
       </div>
    );

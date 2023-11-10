@@ -50,7 +50,7 @@ const OurMenu = () => {
          <div className="mt-16 text-center">
             <Link
                to="/"
-               className="bg-secondary w-52 uppercase inline-block hover:bg-gray-800 text-white text-md font-light py-3 px-4 rounded">
+               className="bg-gray-100 border-b-2 transition-all hover:text-white border-secondary w-52 uppercase inline-block hover:bg-secondary text-primary text-md font-light py-3 px-4 rounded">
                View Full Menu
             </Link>
          </div>
