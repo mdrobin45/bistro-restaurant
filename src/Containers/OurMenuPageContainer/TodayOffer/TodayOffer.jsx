@@ -23,21 +23,11 @@ const menuList = [
       description:
          "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
    },
-   {
-      title: "TUNA NIÇOISE",
-      description:
-         "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-   },
-   {
-      title: "ROASTED PORK BELLY",
-      description:
-         "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
-   },
 ];
-const OurMenu = () => {
+const TodayOffer = () => {
    return (
-      <div className="my-20">
-         <SectionHeader title="FROM OUR MENU" subtitle="Check it out" />
+      <div className="py-20 max-w-[1200px] mx-auto">
+         <SectionHeader title="TODAY'S OFFER" subtitle="Don't miss" />
          <div className="grid grid-cols-2 gap-10 pt-6">
             {menuList.map((item, index) => (
                <MenuItem
@@ -47,9 +37,9 @@ const OurMenu = () => {
                />
             ))}
          </div>
-         <ButtonLink text="View Full Menu" url="/shop" />
+         <ButtonLink text="ORDER YOUR FAVORITES FOOD" url="/shop" />
       </div>
    );
 };
 
-export default OurMenu;
+export default TodayOffer;

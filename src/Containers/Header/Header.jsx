@@ -30,7 +30,7 @@ const menuItems = [
 ];
 const Header = () => {
    return (
-      <section className="flex absolute bg-gray-900 bg-opacity-10 w-full px-12 z-10 items-center justify-between">
+      <section className="flex absolute bg-gray-900 bg-opacity-50 w-full px-12 z-10 items-center justify-between">
          <div>
             <img className="w-32" src={logo} alt="Logo" />
          </div>

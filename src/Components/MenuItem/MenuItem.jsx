@@ -1,8 +1,14 @@
+import image from "../../assets/menu/menuItem.png";
+
 const MenuItem = ({ description, title }) => {
    return (
       <div className="flex items-start gap-3">
-         <div className=" w-36 h-28 bg-gray-300 rounded-b-full rounded-r-full">
-            <img src="" alt="" />
+         <div>
+            <img
+               className="bg-gray-200 w-36 h-28 rounded-b-full rounded-r-full"
+               src={image}
+               alt="Item"
+            />
          </div>
          <div className="flex items-start justify-between">
             <div>
