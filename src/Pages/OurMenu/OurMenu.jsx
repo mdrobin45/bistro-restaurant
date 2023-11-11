@@ -7,13 +7,11 @@ import image from ".././../assets/menu/banner3.jpg";
 const OurMenu = () => {
    return (
       <div>
-         <section className="2xl:max-w-[1200px] mx-auto">
-            <Cover
-               title="Our Menu"
-               description="Would you like to try a dish?"
-               bgImage={image}
-            />
-         </section>
+         <Cover
+            title="Our Menu"
+            description="Would you like to try a dish?"
+            bgImage={image}
+         />
          <TodayOffer />
          <Category1 />
          <Category2 />

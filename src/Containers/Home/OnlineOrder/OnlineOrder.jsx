@@ -10,7 +10,7 @@ import "./style.css";
 const OnlineOrder = () => {
    const swiperRef = useRef();
    return (
-      <div className="my-20">
+      <div className="my-20 max-w-[1200px] mx-auto">
          <SectionHeader
             title="Online order"
             subtitle="From 11:00am to 10:00pm"

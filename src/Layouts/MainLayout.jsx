@@ -4,7 +4,7 @@ import Header from "../Containers/Header/Header";
 
 const MainLayout = () => {
    return (
-      <div>
+      <div className="2xl:max-w-[1200px] mx-auto relative">
          <Header />
          <Outlet />
          <Footer />

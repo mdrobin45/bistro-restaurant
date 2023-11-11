@@ -10,30 +10,14 @@ import TestimonialSlider from "../../Containers/Home/TestimonialSlider/Testimoni
 const Home = () => {
    return (
       <div>
-         <section className="2xl:max-w-[1200px] mx-auto">
-            <Banner />
-         </section>
-         <section className="max-w-[1200px] mx-auto">
-            <OnlineOrder />
-         </section>
-         <section className="2xl:max-w-[1200px] mx-auto">
-            <About />
-         </section>
-         <section className="max-w-[1200px] mx-auto">
-            <OurMenu />
-         </section>
-         <section className="max-w-[1200px] mx-auto">
-            <CallToAction />
-         </section>
-         <section className="max-w-[1200px] mx-auto">
-            <RecommendFoods />
-         </section>
-         <section className="2xl:max-w-[1200px] mx-auto">
-            <MenuBanner />
-         </section>
-         <section className="max-w-[1200px] mx-auto">
-            <TestimonialSlider />
-         </section>
+         <Banner />
+         <OnlineOrder />
+         <About />
+         <OurMenu />
+         <CallToAction />
+         <RecommendFoods />
+         <MenuBanner />
+         <TestimonialSlider />
       </div>
    );
 };

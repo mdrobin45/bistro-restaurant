@@ -36,7 +36,7 @@ const menuList = [
 ];
 const OurMenu = () => {
    return (
-      <div className="my-20">
+      <div className="my-20 max-w-[1200px] mx-auto">
          <SectionHeader title="FROM OUR MENU" subtitle="Check it out" />
          <div className="grid grid-cols-2 gap-10 pt-6">
             {menuList.map((item, index) => (

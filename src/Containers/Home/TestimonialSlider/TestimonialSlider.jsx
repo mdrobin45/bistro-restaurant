@@ -6,7 +6,7 @@ import TestimonialCard from "../../../Components/TestimonialCard/TestimonialCard
 
 const TestimonialSlider = () => {
    return (
-      <div className="my-20">
+      <div className="my-20 max-w-[1200px] mx-auto">
          <SectionHeader title="TESTIMONIALS" subtitle="What Our Clients Say" />
          <Swiper
             navigation={true}
