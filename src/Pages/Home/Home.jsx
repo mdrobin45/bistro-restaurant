@@ -5,6 +5,7 @@ import MenuBanner from "../../Containers/Home/MenuBanner/MenuBanner";
 import OnlineOrder from "../../Containers/Home/OnlineOrder/OnlineOrder";
 import OurMenu from "../../Containers/Home/OurMenu/OurMenu";
 import RecommendFoods from "../../Containers/Home/RecommendFoods/RecommendFoods";
+import TestimonialSlider from "../../Containers/Home/TestimonialSlider/TestimonialSlider";
 
 const Home = () => {
    return (
@@ -29,6 +30,9 @@ const Home = () => {
          </section>
          <section className="2xl:max-w-[1200px] mx-auto">
             <MenuBanner />
+         </section>
+         <section className="max-w-[1200px] mx-auto">
+            <TestimonialSlider />
          </section>
       </div>
    );
