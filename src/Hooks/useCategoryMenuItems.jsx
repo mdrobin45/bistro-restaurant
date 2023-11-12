@@ -3,7 +3,7 @@ import { getMenuItemByCategory } from "../Api/serverRequest";
 
 const useCategoryMenuItems = (category) => {
    const { isPending, data } = useQuery({
-      queryKey: ["categoryMenuItems"],
+      queryKey: ["categoryMenuItems", category],
       queryFn: () => getMenuItemByCategory(category),
       initialData: [],
    });

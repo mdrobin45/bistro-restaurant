@@ -13,6 +13,6 @@ export const getAllMenuItems = async () => {
 
 // Fetch menu item by category
 export const getMenuItemByCategory = async (category) => {
-   const { data } = await axiosReq.get(`/menu/?category=${category}`);
+   const { data } = await axiosReq.get(`/menu/category?name=${category}`);
    return data;
 };
