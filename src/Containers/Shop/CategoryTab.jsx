@@ -5,33 +5,18 @@ import {
    TabsBody,
    TabsHeader,
 } from "@material-tailwind/react";
-import queryString from "query-string";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import TabContent from "./TabContent";
 
 const CategoryTab = () => {
-   const [params, setParams] = useSearchParams();
-   const navigate = useNavigate();
-   const location = useLocation();
-
-   const catName = queryString.parse(location.search).category;
+   const [params, setParams] = useSearchParams({ category: "salad" });
 
    // Tab change handler
    const tabChangeHandler = (catName) => {
-      let currentQuery = {};
-      if (params) {
-         currentQuery = queryString.parse(params.toString);
-
-         const updateQuery = { ...currentQuery, category: catName };
-         const url = queryString.stringifyUrl({
-            url: "/shop",
-            query: updateQuery,
-         });
-         navigate(url);
-      }
+      setParams({ category: catName });
    };
    return (
-      <Tabs value={catName}>
+      <Tabs value={params.get("category")}>
          <TabsHeader
             className="rounded-none w-2/4 mx-auto mt-20 mb-10 border-b border-blue-gray-50 bg-transparent p-0"
             indicatorProps={{
@@ -55,8 +40,8 @@ const CategoryTab = () => {
             </Tab>
          </TabsHeader>
          <TabsBody>
-            <TabPanel value={catName}>
-               <TabContent catName={catName} />
+            <TabPanel value={params.get("category")}>
+               <TabContent catName={params.get("category")} />
             </TabPanel>
          </TabsBody>
       </Tabs>
