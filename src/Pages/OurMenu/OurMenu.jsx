@@ -1,8 +1,8 @@
 import Cover from "../../Components/Cover/Cover";
-import Category1 from "../../Containers/OurMenuPageContainer/Category1/Category1";
-import Category2 from "../../Containers/OurMenuPageContainer/Category2/Category2";
-import Category3 from "../../Containers/OurMenuPageContainer/Category3/Category3";
-import TodayOffer from "../../Containers/OurMenuPageContainer/TodayOffer/TodayOffer";
+import Category1 from "../../Containers/OurMenu/Category1/Category1";
+import Category2 from "../../Containers/OurMenu/Category2/Category2";
+import Category3 from "../../Containers/OurMenu/Category3/Category3";
+import TodayOffer from "../../Containers/OurMenu/TodayOffer/TodayOffer";
 import image from ".././../assets/menu/banner3.jpg";
 const OurMenu = () => {
    return (
