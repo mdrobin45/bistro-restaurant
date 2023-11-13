@@ -1,36 +1,28 @@
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { Button, IconButton, Input } from "@material-tailwind/react";
-import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useGoogleSignInLogic from "../../Hooks/useGoogleSignInLogic";
+import useRegisterLogic from "../../Hooks/useRegisterLogic";
 import bgImage from "../../assets/authentication.png";
 import image from "../../assets/authentication2.png";
 
 const RegisterForm = () => {
-   const [token, setToken] = useState(null);
-   const captchaRef = useRef(null);
+   const [showPassword, setShowPassword] = useState(false);
+   const { handleGoogleSignIn } = useGoogleSignInLogic();
    const {
       register,
       handleSubmit,
-      formState: { errors },
-   } = useForm();
+      errors,
+      onLoad,
+      onSubmit,
+      setToken,
+      captchaRef,
+   } = useRegisterLogic();
 
-   console.log(errors);
-   // Load captcha when page load
-   const onLoad = () => {
-      captchaRef.current.execute();
-   };
-
-   // Submit form handler
-   const onSubmit = (data) => {
-      if (!token) {
-         console.log("Please verify you are human");
-         return;
-      }
-      console.log(data);
-   };
    return (
       <div
          style={{ backgroundImage: `url(${bgImage})` }}
@@ -81,8 +73,25 @@ const RegisterForm = () => {
                            value: /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+|~-]).{7,}$/,
                         },
                      })}
-                     type="password"
+                     type={showPassword ? "text" : "password"}
                      label="Password"
+                     icon={
+                        showPassword ? (
+                           <AiOutlineEye
+                              onClick={() => {
+                                 setShowPassword(!showPassword);
+                              }}
+                              className="text-lg cursor-pointer"
+                           />
+                        ) : (
+                           <AiOutlineEyeInvisible
+                              onClick={() => {
+                                 setShowPassword(!showPassword);
+                              }}
+                              className="text-lg cursor-pointer"
+                           />
+                        )
+                     }
                   />
                   {(errors.password?.type === "minLength" && (
                      <span className="text-red-500 mt-3">
@@ -105,16 +114,16 @@ const RegisterForm = () => {
                   />
                </div>
                <Button className="mt-3 w-full bg-primary" type="submit">
-                  Login
+                  Register
                </Button>
                <p className="text-secondary mt-3 text-center">
-                  New here?{" "}
-                  <Link className="font-semibold" to="/register">
-                     Create new account
+                  Already have account?{" "}
+                  <Link className="font-semibold" to="/login">
+                     Login here
                   </Link>
                </p>
                <div className="flex mt-3 items-center justify-center gap-4">
-                  <IconButton>
+                  <IconButton onClick={handleGoogleSignIn}>
                      <FaGoogle className="text-2xl" />
                   </IconButton>
                   <IconButton>

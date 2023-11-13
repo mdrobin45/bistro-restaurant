@@ -1,35 +1,27 @@
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { Button, IconButton, Input } from "@material-tailwind/react";
-import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useGoogleSignInLogic from "../../Hooks/useGoogleSignInLogic";
+import useLoginLogic from "../../Hooks/useLoginLogic";
 import bgImage from "../../assets/authentication.png";
 import image from "../../assets/authentication2.png";
 
 const LoginForm = () => {
-   const [token, setToken] = useState(null);
-   const captchaRef = useRef(null);
+   const [showPassword, setShowPassword] = useState(false);
+   const { handleGoogleSignIn } = useGoogleSignInLogic();
    const {
       register,
       handleSubmit,
-      formState: { errors },
-   } = useForm();
-
-   // Load captcha when page load
-   const onLoad = () => {
-      captchaRef.current.execute();
-   };
-
-   // Submit form handler
-   const onSubmit = (data) => {
-      if (!token) {
-         console.log("Please verify you are human");
-         return;
-      }
-      console.log(data);
-   };
+      errors,
+      onLoad,
+      onSubmit,
+      setToken,
+      captchaRef,
+   } = useLoginLogic();
 
    return (
       <div
@@ -64,8 +56,25 @@ const LoginForm = () => {
                      {...register("password", {
                         required: "Password required",
                      })}
-                     type="password"
+                     type={showPassword ? "text" : "password"}
                      label="Password"
+                     icon={
+                        showPassword ? (
+                           <AiOutlineEye
+                              onClick={() => {
+                                 setShowPassword(!showPassword);
+                              }}
+                              className="text-lg cursor-pointer"
+                           />
+                        ) : (
+                           <AiOutlineEyeInvisible
+                              onClick={() => {
+                                 setShowPassword(!showPassword);
+                              }}
+                              className="text-lg cursor-pointer"
+                           />
+                        )
+                     }
                   />
                </div>
                <div>
@@ -86,7 +95,7 @@ const LoginForm = () => {
                   </Link>
                </p>
                <div className="flex mt-3 items-center justify-center gap-4">
-                  <IconButton>
+                  <IconButton onClick={handleGoogleSignIn}>
                      <FaGoogle className="text-2xl" />
                   </IconButton>
                   <IconButton>
