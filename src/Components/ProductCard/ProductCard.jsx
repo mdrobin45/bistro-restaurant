@@ -28,7 +28,7 @@ const ProductCard = ({ name, recipe, image }) => {
             </Typography>
          </CardBody>
          <CardFooter className="flex items-center justify-center">
-            <Button className="bg-gray-100 border-b-2 transition-all hover:text-white border-secondary w-52 uppercase inline-block hover:bg-secondary text-primary text-md font-light py-3 px-4 rounded">
+            <Button className="bg-gray-100 border-b-2 transition-all hover:text-white border-primary w-52 uppercase inline-block hover:bg-secondary text-primary text-md font-light py-3 px-4 rounded">
                Add To Cart
             </Button>
          </CardFooter>
