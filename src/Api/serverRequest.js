@@ -16,3 +16,15 @@ export const getMenuItemByCategory = async (category) => {
    const { data } = await axiosReq.get(`/menu/category?name=${category}`);
    return data;
 };
+
+// Add product to cart
+export const addToCart = async (productData) => {
+   const { data } = await axiosReq.post("/cart", productData);
+   return data;
+};
+
+// Get cart product by user
+export const getCartProduct = async (email) => {
+   const { data } = await axiosReq.get(`/cart?email=${email}`);
+   return data;
+};

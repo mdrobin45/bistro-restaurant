@@ -10,12 +10,7 @@ const RecommendFoods = () => {
          <SectionHeader title="CHEF RECOMMENDS" subtitle="Should Try" />
          <div className="grid grid-cols-3 gap-4">
             {foodCards.map((food) => (
-               <ProductCard
-                  key={food._id}
-                  name={food.name}
-                  recipe={food.recipe}
-                  image={food.image}
-               />
+               <ProductCard key={food._id} food={food} />
             ))}
          </div>
       </div>

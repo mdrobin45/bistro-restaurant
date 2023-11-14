@@ -3,6 +3,7 @@ import { MdOutlineLogin } from "react-icons/md";
 import { Link } from "react-router-dom";
 import NavMenuLink from "../../Components/NavMenuLink/NavMenuLink";
 import useAuth from "../../Hooks/useAuth";
+import useCartProducts from "../../Hooks/useCartProducts";
 import logo from "../../assets/logo.png";
 import UserDropdown from "./UserDropdown";
 import "./style.css";
@@ -27,6 +28,8 @@ const menuItems = [
 ];
 const Header = () => {
    const { user } = useAuth();
+   const { cartProducts } = useCartProducts();
+   const totalCart = cartProducts.length;
    return (
       <section className="flex absolute bg-gray-900 bg-opacity-50 w-full px-12 z-10 items-center justify-between">
          <div>
@@ -43,7 +46,7 @@ const Header = () => {
                   <div className="relative py-2">
                      <div className=" top-1 absolute -right-2">
                         <p className="flex h-1 w-1 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
-                           3
+                           {totalCart}
                         </p>
                      </div>
                      <svg

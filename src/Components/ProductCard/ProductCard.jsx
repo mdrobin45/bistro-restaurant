@@ -4,10 +4,14 @@ import {
    CardBody,
    CardFooter,
    CardHeader,
+   Spinner,
    Typography,
 } from "@material-tailwind/react";
+import useAddToCart from "../../Hooks/useAddToCart";
 
-const ProductCard = ({ name, recipe, image }) => {
+const ProductCard = ({ food }) => {
+   const { _id, name, recipe, image } = food;
+   const { isPending, addToCartHandler } = useAddToCart();
    return (
       <Card className="max-w-[24rem] overflow-hidden">
          <CardHeader
@@ -28,8 +32,10 @@ const ProductCard = ({ name, recipe, image }) => {
             </Typography>
          </CardBody>
          <CardFooter className="flex items-center justify-center">
-            <Button className="bg-gray-100 border-b-2 transition-all hover:text-white border-primary w-52 uppercase inline-block hover:bg-secondary text-primary text-md font-light py-3 px-4 rounded">
-               Add To Cart
+            <Button
+               onClick={() => addToCartHandler(_id)}
+               className="bg-gray-100 border-b-2 transition-all hover:text-white border-primary w-52 uppercase inline-block hover:bg-secondary text-primary text-md font-light py-3 px-4 rounded">
+               {isPending ? <Spinner className="mx-auto" /> : "Add To Cart"}
             </Button>
          </CardFooter>
       </Card>

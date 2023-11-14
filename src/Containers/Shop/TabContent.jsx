@@ -28,12 +28,7 @@ const TabContent = ({ catName }) => {
       <>
          <div className="grid grid-cols-4 gap-4 my-10">
             {displayFoods.map((food) => (
-               <ProductCard
-                  key={food._id}
-                  name={food.name}
-                  recipe={food.recipe}
-                  image={food.image}
-               />
+               <ProductCard key={food._id} food={food} />
             ))}
          </div>
          <div className="flex items-center justify-center gap-4">
