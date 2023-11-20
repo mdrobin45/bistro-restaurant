@@ -28,3 +28,9 @@ export const getCartProduct = async (email) => {
    const { data } = await axiosReq.get(`/cart?email=${email}`);
    return data;
 };
+
+// Delete cart product
+export const deleteCartProduct = async (id) => {
+   const { data } = await axiosReq.delete(`/cart/${id}`);
+   return data;
+};

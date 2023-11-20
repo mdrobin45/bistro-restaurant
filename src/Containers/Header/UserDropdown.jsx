@@ -47,7 +47,7 @@ const UserDropdown = () => {
                {user?.displayName}
             </p>
             <hr />
-            <Link to="/dashboard">
+            <Link to="/dashboard/my-profile">
                <MenuItem>
                   <Typography as="span" variant="small" className="font-normal">
                      Dashboard

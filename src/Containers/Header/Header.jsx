@@ -31,7 +31,9 @@ const Header = () => {
    const { cartProducts } = useCartProducts();
    const totalCart = cartProducts.length;
    return (
-      <section className="flex absolute bg-gray-900 bg-opacity-50 w-full px-12 z-10 items-center justify-between">
+      <section
+         id="site_header"
+         className="flex absolute bg-gray-900 bg-opacity-50 w-full px-12 z-10 items-center justify-between">
          <div>
             <img className="w-32" src={logo} alt="Logo" />
          </div>
@@ -42,7 +44,7 @@ const Header = () => {
                      <NavMenuLink text={item.text} url={item.link} />
                   </li>
                ))}
-               <Link to="/cart">
+               <Link to="/dashboard/my-cart">
                   <div className="relative py-2">
                      <div className=" top-1 absolute -right-2">
                         <p className="flex h-1 w-1 items-center justify-center rounded-full bg-red-500 p-2 text-xs text-white">
